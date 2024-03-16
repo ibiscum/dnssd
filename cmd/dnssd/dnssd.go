@@ -1,4 +1,4 @@
-// dnssd is a utilty to register and browser DNS-SD services.
+// dnssd is a utilty to register and browse DNS-SD services.
 package main
 
 import (
@@ -179,7 +179,10 @@ func main() {
 	cmd := args[0]
 
 	// Use the remaining arguments as flags.
-	flag.CommandLine.Parse(os.Args[2:])
+	err := flag.CommandLine.Parse(os.Args[2:])
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	if *typeFlag == "" {
 		printUsage()

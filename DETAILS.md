@@ -4,12 +4,14 @@
 - mDNS allows host names of form `<single-dns-label>.local`
 - The domain "local" is a link-local Multicast DNS domain.
 	> This means that names within that domain are only meaningful on the link they originate. Any DNS query for a name ending with ".local" must be sent to the mDNS IPv4 link-local mutlicast adress "224.0.0.251" (or "FF02::FB" for IPv6)
-	> […]
-	> DNS queries for names not ending "local." may be sent to the mDNS multicast address.
-	> […]
-	> Any DNS query for a name ending with "254.169.in-addr.arpa." MUST be sent to the mDNS IPv4 link-local multicast address 224.0.0.251 or the mDNS IPv6 multicast address FF02::FB.
-	> Likewise, any DNS query for a name within the reverse mapping domains for IPv6 link-local addresses ("8.e.f.ip6.arpa.", "9.e.f.ip6.arpa.", "a.e.f.ip6.arpa.", and "b.e.f.ip6.arpa.") MUST be sent to the mDNS IPv6 link-local multicast address FF02::FB or the mDNS IPv4 link-local multicast address 224.0.0.251.
-	[rfc6762][mdns]
+	
+    > […] DNS queries for names not ending "local." may be sent to the mDNS multicast address. […]
+	
+    > Any DNS query for a name ending with "254.169.in-addr.arpa." MUST be sent to the mDNS IPv4 link-local multicast address 224.0.0.251 or the mDNS IPv6 multicast address FF02::FB.
+	
+    > Likewise, any DNS query for a name within the reverse mapping domains for IPv6 link-local addresses ("8.e.f.ip6.arpa.", "9.e.f.ip6.arpa.", "a.e.f.ip6.arpa.", and "b.e.f.ip6.arpa.") MUST be sent to the mDNS IPv6 link-local multicast address FF02::FB or the mDNS IPv4 link-local multicast address 224.0.0.251.
+	
+    [rfc6762][mdns]
 - Probing
 
 # DNS-SD

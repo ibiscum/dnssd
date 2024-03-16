@@ -1,6 +1,8 @@
 package dnssd
 
 import (
+	"log"
+
 	"github.com/miekg/dns"
 
 	"context"
@@ -105,10 +107,10 @@ func TestProbing(t *testing.T) {
 	}
 	srv, err := NewService(cfg)
 	if err != nil {
-		t.Fatal(err)
+		log.Fatal(err)
 	}
 	srv.ifaceIPs = map[string][]net.IP{
-		testIface.Name: []net.IP{net.IP{192, 168, 0, 122}},
+		testIface.Name: {net.IP{192, 168, 0, 122}},
 	}
 
 	r := newResponder(otherConn)
@@ -116,17 +118,20 @@ func TestProbing(t *testing.T) {
 		rcfg := cfg.Copy()
 		rsrv, err := NewService(rcfg)
 		if err != nil {
-			t.Fatal(err)
+			log.Fatal(err)
 		}
 		rsrv.ifaceIPs = map[string][]net.IP{
-			testIface.Name: []net.IP{net.IP{192, 168, 0, 123}},
+			testIface.Name: {net.IP{192, 168, 0, 123}},
 		}
 
 		rctx, rcancel := context.WithCancel(ctx)
 		defer rcancel()
 
 		r.addManaged(rsrv)
-		r.Respond(rctx)
+		err = r.Respond(rctx)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}()
 
 	resolved, err := probeService(ctx, conn, srv, 500*time.Millisecond, true)
@@ -184,7 +189,7 @@ func TestDenyingAs(t *testing.T) {
 	}{
 		{
 			This: []*dns.A{
-				&dns.A{
+				{
 					Hdr: dns.RR_Header{
 						Name:   "MyPrinter.local.",
 						Rrtype: dns.TypeA,
@@ -195,7 +200,7 @@ func TestDenyingAs(t *testing.T) {
 				},
 			},
 			That: []*dns.A{
-				&dns.A{
+				{
 					Hdr: dns.RR_Header{
 						Name:   "MyPrinter.local.",
 						Rrtype: dns.TypeA,
@@ -209,7 +214,7 @@ func TestDenyingAs(t *testing.T) {
 		},
 		{
 			This: []*dns.A{
-				&dns.A{
+				{
 					Hdr: dns.RR_Header{
 						Name:   "MyPrinter.local.",
 						Rrtype: dns.TypeA,
@@ -225,7 +230,7 @@ func TestDenyingAs(t *testing.T) {
 		{
 			This: []*dns.A{},
 			That: []*dns.A{
-				&dns.A{
+				{
 					Hdr: dns.RR_Header{
 						Name:   "MyPrinter.local.",
 						Rrtype: dns.TypeA,

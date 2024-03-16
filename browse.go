@@ -61,7 +61,7 @@ func lookupType(ctx context.Context, service string, conn MDNSConn, add AddFunc,
 
 	m := new(dns.Msg)
 	m.Question = []dns.Question{
-		dns.Question{
+		{
 			Name:   service,
 			Qtype:  dns.TypePTR,
 			Qclass: dns.ClassINET,
