@@ -1,7 +1,7 @@
 package dnssd
 
 import (
-	"github.com/brutella/dnssd/log"
+	"github.com/ibiscum/dnssd/log"
 	"github.com/miekg/dns"
 
 	"context"

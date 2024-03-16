@@ -1,6 +1,6 @@
 # DNS-SD
 
-[![Build Status](https://travis-ci.org/brutella/hc.svg)](https://travis-ci.org/brutella/dnssd)
+[![Build Status](https://travis-ci.org/ibiscum/hc.svg)](https://travis-ci.org/ibiscum/dnssd)
 
 This library implements [Multicast DNS][mdns] and [DNS-Based Service Discovery][dnssd] to provide zero-configuration operations. It lets you announce and find services in a specific link-local domain.
 
@@ -16,7 +16,7 @@ The following code creates a service with name "My Website._http._tcp.local." fo
 ```go
 import (
 	"context"
-	"github.com/brutella/dnssd"
+	"github.com/ibiscum/dnssd"
 )
 
 cfg := dnssd.Config{
@@ -70,7 +70,7 @@ The command line tool in `cmd/dnssd` lets you browse, register and resolve servi
 ### Install
 You can install the tool with
 
-`go install github.com/brutella/dnssd/cmd/dnssd`
+`go install github.com/ibiscum/dnssd/cmd/dnssd`
 
 ### Usage
 
@@ -116,7 +116,7 @@ dnssd resolve -Name="Private Printer" -Type="_printer._tcp"
 
 ## Conformance
 
-This library passes the [multicast DNS tests](https://github.com/brutella/dnssd/blob/36a2d8c541aab14895fc5492d5ad8ec447a67c47/_cmd/bct/ConformanceTestResults) of Apple's Bonjour Conformance Test.
+This library passes the [multicast DNS tests](https://github.com/ibiscum/dnssd/blob/36a2d8c541aab14895fc5492d5ad8ec447a67c47/_cmd/bct/ConformanceTestResults) of Apple's Bonjour Conformance Test.
 
 ## TODO
 
@@ -130,9 +130,9 @@ This library passes the [multicast DNS tests](https://github.com/brutella/dnssd/
 
 Matthias Hochgatterer
 
-Github: [https://github.com/brutella](https://github.com/brutella/)
+Github: [https://github.com/ibiscum](https://github.com/ibiscum/)
 
-Twitter: [https://twitter.com/brutella](https://twitter.com/brutella)
+Twitter: [https://twitter.com/ibiscum](https://twitter.com/ibiscum)
 
 
 # License

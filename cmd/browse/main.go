@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/brutella/dnssd"
-	"github.com/brutella/dnssd/log"
+	"github.com/ibiscum/dnssd"
+	"github.com/ibiscum/dnssd/log"
 )
 
 var serviceFlag = flag.String("Type", "_raop._tcp", "Service type")

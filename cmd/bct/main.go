@@ -4,11 +4,12 @@ import (
 	"bufio"
 	"context"
 	"fmt"
-	"github.com/brutella/dnssd"
-	"github.com/brutella/dnssd/log"
 	"os"
 	"os/signal"
 	"strings"
+
+	"github.com/ibiscum/dnssd"
+	"github.com/ibiscum/dnssd/log"
 )
 
 func main() {

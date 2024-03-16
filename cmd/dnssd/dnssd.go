@@ -5,7 +5,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/brutella/dnssd"
+	"github.com/ibiscum/dnssd"
 
 	"context"
 	"flag"

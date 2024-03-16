@@ -2,8 +2,8 @@
 package main
 
 import (
-	"github.com/brutella/dnssd"
-	"github.com/brutella/dnssd/log"
+	"github.com/ibiscum/dnssd"
+	"github.com/ibiscum/dnssd/log"
 
 	"context"
 	"flag"

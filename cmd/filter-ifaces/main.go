@@ -8,7 +8,7 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/brutella/dnssd"
+	"github.com/ibiscum/dnssd"
 )
 
 func main() {
