@@ -14,7 +14,7 @@ import (
 	"github.com/brutella/dnssd/log"
 )
 
-var serviceFlag = flag.String("Type", "_asdf._tcp", "Service type")
+var serviceFlag = flag.String("Type", "_raop._tcp", "Service type")
 var domainFlag = flag.String("Domain", "local.", "Browsing domain")
 var verboseFlag = flag.Bool("Verbose", false, "Verbose logging")
 var timeFormat = "15:04:05.000"
