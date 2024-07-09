@@ -1,7 +1,5 @@
 # DNS-SD
 
-[![Build Status](https://travis-ci.org/ibiscum/hc.svg)](https://travis-ci.org/ibiscum/dnssd)
-
 This library implements [Multicast DNS][mdns] and [DNS-Based Service Discovery][dnssd] to provide zero-configuration operations. It lets you announce and find services in a specific link-local domain.
 
 [mdns]: https://tools.ietf.org/html/rfc6762
@@ -9,7 +7,7 @@ This library implements [Multicast DNS][mdns] and [DNS-Based Service Discovery][
 
 ## Usage
 
-#### Create a mDNS responder
+### Create a mDNS responder
 
 The following code creates a service with name "My Website._http._tcp.local." for the host "My Computer" which has all IPs from network interface "eth0". The service is added to a responder.
 
@@ -52,7 +50,7 @@ defer cancel()
 rp.Respond(ctx)
 ```
 
-When calling `Respond` the responder probes for the service instance name and host name to be unqiue in the network. 
+When calling `Respond` the responder probes for the service instance name and host name to be unqiue in the network.
 Once probing is finished, the service will be announced.
 
 #### Update TXT records
@@ -125,15 +123,6 @@ This library passes the [multicast DNS tests](https://github.com/ibiscum/dnssd/b
 - [ ] Handle txt records case insensitive
 - [ ] Remove outdated services from cache regularly
 - [ ] Make sure that hostnames are FQDNs
-
-# Contact
-
-Matthias Hochgatterer
-
-Github: [https://github.com/ibiscum](https://github.com/ibiscum/)
-
-Twitter: [https://twitter.com/ibiscum](https://twitter.com/ibiscum)
-
 
 # License
 
