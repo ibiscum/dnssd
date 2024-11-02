@@ -400,7 +400,7 @@ func shouldIgnore(m *dns.Msg) bool {
 }
 
 func sanitizeResponse(m *dns.Msg) {
-	if m.Question != nil && len(m.Question) > 0 {
+	if len(m.Question) > 0 {
 		log.Info.Println("Multicast DNS responses MUST NOT contain any questions in the Question Section.  (RFC6762 6)")
 		m.Question = nil
 	}

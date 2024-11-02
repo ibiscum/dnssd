@@ -112,11 +112,11 @@ func NewService(cfg Config) (s Service, err error) {
 	ips := []net.IP{}
 	var ifaces []string
 
-	if cfg.IPs != nil && len(cfg.IPs) > 0 {
+	if len(cfg.IPs) > 0 {
 		ips = cfg.IPs
 	}
 
-	if cfg.Ifaces != nil && len(cfg.Ifaces) > 0 {
+	if len(cfg.Ifaces) > 0 {
 		ifaces = cfg.Ifaces
 	}
 
